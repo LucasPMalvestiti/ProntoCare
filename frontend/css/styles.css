@@ -1,0 +1,183 @@
+/*Import da Fonte no google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Noto+Sans:wght@200;300;400;500;600;700&display=swap');
+
+/*aplica a fonte para toda a página*/
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/*define uma "colisão" com o tamanho d todos elementos do body*/
+body * {
+    box-sizing: border-box;
+}
+
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    /*centralização das divs e texto*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.left-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    /*centralização das divs e texto da div a esquerda*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: blue;
+    /*caso deseje implementar algo além da imagem q vai aqui,
+    e queira colocar este algo em alguma direção específica em
+    relação ao elemento principal usar flex-direction*/
+}
+
+.left-login-img{
+    /*torna a img responsiva*/
+    width: 45vw;
+}
+
+.right-login{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    /*centraliza as divs e textos da div a direita*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: red;
+}
+
+.card-login{
+    width: 60%;
+    display: flex;
+    /*centraliza os elementos da card de login*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+/*edita o título da card de login*/
+.card-login > h1{
+    color: 1e1e1e;
+    font-weight: 800;
+    margin: 0;
+}
+
+/*design dos espaços para texto (label/input)*/
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: center;
+    margin: 10px 0px
+}
+
+/*design dos inputs*/
+.textfield > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #E3E3E3;
+    color: #1e1e1e;
+    font-size: 12pt;
+    box-shadow: 0px 10px 80px #85858556;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/*design dos labels*/
+.textfield > label{
+    color: #1e1e1e;
+    margin-bottom: 10px;
+}
+
+/*cor específica do PLACEHOLDER dos inputs*/
+.textfield > input::placeholder{
+    color: rgb(102, 102, 102);
+}
+
+/*design do botão de login*/
+.btn-login{
+    /*margens e bordas do botão*/
+    width: 100%;
+    padding: 16px 0px;
+    margin: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    /*texto do botão*/
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+    /*cor, ponteiro reativo ao passar por cima e sombra do botão*/
+    background: #e33333;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px palevioletred;
+}
+
+/*tamanho da div das linhas de rodapé do card de login*/
+.login-card-footer{
+    width: 100%;
+}
+
+/*tamanho dos parágrafos dentro da card*/
+.login-card-footer > p{
+    margin: 2%;
+}
+
+/*botão da linha de rodapé do card de login*/
+.btn-footer{
+    color: #e33333;
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/*responsividade do card de login para telas menores que 950px*/
+@media only screen and (max-width:950px){
+    .card-login{
+        width: 85%;
+    }
+}
+
+/*RESPONSIVIDADE PARA O CELULAR
+
+DO JEITO Q TA, ESTA FUNCIONANDO, MAS N SEI SE COM
+A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO
+@media only screen and (max-width:600px){
+    .main-login{
+        flex-direction: column;
+    }
+    .left-login > h1{
+        display: none;
+    }
+    .left-login{
+        width: 100%;
+        height: auto;
+    }
+    .right-login{
+        width: 100%;
+        height: auto;
+    }
+    .card-login{
+        width: 90%;
+    }
+}*/
