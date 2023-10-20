@@ -32,16 +32,32 @@ body * {
     /*centralização das divs e texto da div a esquerda*/
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: blue;
+    background-color: white;
+    flex-direction: column;
     /*caso deseje implementar algo além da imagem q vai aqui,
     e queira colocar este algo em alguma direção específica em
     relação ao elemento principal usar flex-direction*/
 }
 
+.left-login > h1{
+    width: 36vw;
+    text-align: left;
+    color: #e33333;
+    margin:0;
+    font-size: 3vw;
+}
+
+.left-login  > h2{
+    width: 36vw;
+    text-align: left;
+    color: #1e1e1e;
+    margin:0;
+    font-size: 1.5vw;
+}
+
 .left-login-img{
     /*torna a img responsiva*/
-    width: 45vw;
+    width: 30vw;
 }
 
 .right-login{
@@ -52,7 +68,7 @@ body * {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: red;
+    background-color:#e33333;
 }
 
 .card-login{
@@ -69,11 +85,9 @@ body * {
     box-shadow: 0px 10px 40px #00000056;
 }
 
-/*edita o título da card de login*/
-.card-login > h1{
-    color: 1e1e1e;
-    font-weight: 800;
-    margin: 0;
+.login-logo-img{
+    /*torna a img responsiva*/
+    width: 10vw;
 }
 
 /*design dos espaços para texto (label/input)*/
@@ -104,6 +118,7 @@ body * {
 .textfield > label{
     color: #1e1e1e;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 /*cor específica do PLACEHOLDER dos inputs*/
@@ -117,7 +132,7 @@ body * {
     width: 100%;
     padding: 16px 0px;
     margin: 15px;
-    border: none;
+    border: solid #e33333;
     border-radius: 8px;
     outline: none;
     /*texto do botão*/
@@ -129,6 +144,14 @@ body * {
     background: #e33333;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px palevioletred;
+    transition-duration: 0.3s;
+}
+
+/*mudar botão qnd mouse passar por cima*/
+.btn-login:hover{
+    background-color: white;
+    color: #e33333;
+    border: solid #e33333;
 }
 
 /*tamanho da div das linhas de rodapé do card de login*/
@@ -142,13 +165,18 @@ body * {
 }
 
 /*botão da linha de rodapé do card de login*/
-.btn-footer{
+.a-footer{
     color: #e33333;
     border: none;
     background-color: inherit;
     font-size: 16px;
     cursor: pointer;
     display: inline-block;
+}
+
+/*mudar linha de contrate-nos já quando o mouse passar por cima*/
+.a-footer:hover{
+    text-decoration: underline;
 }
 
 /*responsividade do card de login para telas menores que 950px*/
@@ -161,7 +189,7 @@ body * {
 /*RESPONSIVIDADE PARA O CELULAR
 
 DO JEITO Q TA, ESTA FUNCIONANDO, MAS N SEI SE COM
-A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO
+A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO*/
 @media only screen and (max-width:600px){
     .main-login{
         flex-direction: column;
@@ -180,4 +208,4 @@ A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO
     .card-login{
         width: 90%;
     }
-}*/
+}
