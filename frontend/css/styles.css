@@ -12,7 +12,7 @@ body * {
     box-sizing: border-box;
 }
 
-
+/*index*/
 .main-login{
     width: 100vw;
     height: 100vh;
@@ -129,7 +129,7 @@ body * {
 /*design do botão de login*/
 .btn-login{
     /*margens e bordas do botão*/
-    width: 100%;
+    width: 50%;
     padding: 16px 0px;
     margin: 15px;
     border: solid #e33333;
@@ -208,4 +208,102 @@ A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO*/
     .card-login{
         width: 90%;
     }
+}
+
+/*--------------------SignIn page---------------------*/
+.main-signin{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    /*centralização das divs e texto*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.left-signin{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    /*centraliza as divs e textos da div a direita*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:#e33333;
+}
+
+.card-signin{
+    width: 60%;
+    display: flex;
+    /*centraliza os elementos da card de login*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.btn-signin{
+    /*margens e bordas do botão*/
+    width: 100%;
+    padding: 16px 0px;
+    margin: 15px;
+    border: solid #e33333;
+    border-radius: 8px;
+    outline: none;
+    /*texto do botão*/
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+    /*cor, ponteiro reativo ao passar por cima e sombra do botão*/
+    background: #e33333;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px palevioletred;
+    transition-duration: 0.3s;
+}
+
+.btn-signin:hover{
+    background-color: white;
+    color: #e33333;
+    border: solid #e33333;
+}
+
+.right-signin{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    /*centralização das divs e texto da div a esquerda*/
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    /*caso deseje implementar algo além da imagem q vai aqui,
+    e queira colocar este algo em alguma direção específica em
+    relação ao elemento principal usar flex-direction*/
+}
+
+.right-signin > h1{
+    width: 36vw;
+    text-align: left;
+    color: #e33333;
+    margin:0;
+    font-size: 3vw;
+}
+
+.right-signin  > h2{
+    width: 36vw;
+    text-align: left;
+    color: #1e1e1e;
+    margin:0;
+    font-size: 1.5vw;
+}
+
+.right-signin-img{
+    /*torna a img responsiva*/
+    width: 30vw;
 }
