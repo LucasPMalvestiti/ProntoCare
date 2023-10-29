@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Noto+Sans:wght@200;300;400;500;600;700&display=swap');
+
+
+* {
+    /*Elementos sem margem e preenchimento*/
+    margin: 0;
+    padding: 0;
+    /*Colisões com os elementos anteriores a ele*/
+    box-sizing: border-box;
+    /*Definição da fonte*/
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    /*Definição da cor do fundo*/
+    background-color: #E3E3E3;
+}
+
+/*Construção da sidebar FECHADA*/
+.sidebar{
+    /*Posicionando Sidebar na esquerda e no topo*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*Comprimento da Sidebar fechada*/
+    width: 60px;
+    /*Altura da Sidebar aberta e fechada*/
+    height: 100vh;
+    /*Definição da cor da Sidebar*/
+    background-color: #FFF;
+    /*Organização dos elementos da Sidebar*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*Transição para abertura da Sidebar*/
+    transition: all 0.7s ease;
+}
+
+
+.sidebar.active{
+    /*Tamanho Sidebar quando ativada*/
+    width: 180px;
+}
+
+/*Posição e Tamanho conteúdo principal c Sidebar fechada*/
+.sidebar.active ~ .main-content{
+    left: 60px;
+    width: calc(100vh - 60px);
+}
+
+/*Div do Conjunto logo + btnMenu*/
+.sidebar .logo-btn{
+    /*Organização dos Elementos Internos da div*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /*Altura/Comprimento da Div*/
+    width: 60px;
+    height: 55px;
+}
+
+/*Div do Conjunto logo + btnMenu (sidebar ativada)*/
+.sidebar.active .logo-btn{
+    /*Comprimento Div*/
+    width: 180px;
+    /*Organização elementos internos da div*/
+    display: flex;
+    align-items: center;
+}
+
+/*Definição para logo não aparecer (Sidebar fechada)*/
+.sidebar .logo-btn .logo{
+    opacity: 0;
+}
+
+.sidebar.active .logo-btn .logo{
+    /*Definição para logo aparecer (Sidebar aberta)*/
+    opacity: 1;
+    /*Tamanho logo*/
+    width: 55%;
+    /*Posição logo*/
+    margin-left: -2.5rem;
+}
+
+/*Definição para btnMenu*/
+.sidebar .logo-btn #btn{
+    /*Posição btnMenu*/
+    position: absolute;
+    top: 1rem;
+    left: 30%;
+    /*Definições de cor e ponteiro*/
+    color: #e33333;
+    cursor: pointer;
+    /*Transição ao abrir Sidebar*/
+    transition: all 1s ease;
+}
+
+/*Definição posição btnMenu ao abrir Sidebar*/
+.sidebar.active .logo-btn #btn{
+    left: 80%
+}
+
+.sidebar .list{
+    /*Posição da div que guarda a lista de menus*/
+    position: absolute;
+    top:3.5rem;
+    /*Comprimento da div*/
+    width: 60px;
+    /*Organização da div*/
+    display: flex;
+}
+
+.sidebar.active .list{
+    /*Posição da div que guarda a lista de menus (Sidebar ativada)*/
+    position: absolute;
+    top: 3.5rem;
+    /*Comprimento da div*/
+    width: 180px;
+}
+
+.sidebar.active ul{
+    width: 180px;
+}
+
+/*Definição de cada conjunto de item da lista*/
+.sidebar ul li{
+    /*Posição cj de item da lista*/
+    position: relative;
+    margin: 0.8rem auto;
+    /*Tirar pontos dos tópicos da lista*/
+    list-style-type: none;
+    /*Tamanho de cada cj de item da lista*/
+    height: 50px;
+    width: 90%;
+    line-height: 50px;
+}
+
+/*Definições da área clicável dos tópicos da lista*/
+.sidebar ul li a{
+    /*Cor dos elementos*/
+    color: #1e1e1e;
+    /*Organização dos elems internos*/
+    display: flex;
+    align-items: center;
+    /*Definições estéticas estéticos*/
+    text-decoration: none;
+    border-radius: 0.8rem;
+    /*Transição ao abrir sidebar*/
+    transition: all 0.7s ease;
+}
+
+/*Definição de cores da área clicável ao abrir Sidebar*/
+.sidebar.active ul li a:hover{
+    background-color: #e3333333;
+    color: #e33333;
+}
+
+/*Definições do ícone da sidebar fechada*/
+.sidebar ul li a i{
+    /*Tamanho*/
+    min-width: 50px;
+    height: 50px;
+    line-height: 50px;
+    /*Organização dos elems*/
+    text-align: center;
+    /*Elementos estéticos*/
+    border-radius: 12px;
+}
+
+/*Definição de cores do ícone da sidebar ao passar o mouse por cima*/
+.sidebar ul li a i:hover{
+    background-color: #e3333333;
+    color: #e33333;
+}
+
+/*Definição da parte escrita dos itens da lista da sidebar*/
+.sidebar .nav-item{
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+/*Definição da parte escrita dos itens da lista da sidebar aberta*/
+.sidebar.active .nav-item{
+    opacity: 1;
+}
+
+/*Definições da div do conteúdo principal*/
+.main-content{
+    /*Posição*/
+    position: relative;
+    top: 0;
+    left: 60px;
+    /*Tamanho*/
+    min-height: 100vh;
+    width: calc(100% - 60px);
+    /*Transição ao abrir Sidebar*/
+    transition: all 0.7s ease;
+}
+
+/*Quando a Sidebar estiver aberta, todo o conteúdo principal,
+irá ser movido x pixels para a esquerda (responsividade)*/
+.sidebar.active ~ .main-content{
+    left: 180px;
+    width: calc(100% - 180px);
+}
+
+.main-content nav{
+    /*Cor da navBar no conteúdo principal*/
+    background-color: #e33333;
+    /*Tamanho da navBar*/
+    height: 55px;
+    /*Organização dos elems internos*/
+    display: flex;
+    justify-content: right;
+    
+}
+
+.main-content nav .profile{
+    /*Organização dos elems internos da div da navBar*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:1rem;
+    margin-right: 1rem;
+    /*Cor da Fonte dos elems internos*/
+    color: white;
+}
+
+.user-img{
+    /*Definição de tamanho, e estilo da foto de usuário na navBar*/
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #E3E3E3
+}
+
+.main-content .title{
+    /*Cor do div abaixo da navBar*/
+    background-color: white;
+    /*Tamanho da div*/
+    height: 55px;
+    /*Organização dos elems internos*/
+    display: flex;
+    align-items: center;
+}
+
+.main-content .title h1{
+    /*Defniição de posição e cor do título*/
+    margin-left: 1rem;
+    color: #1e1e1e;
+}
+

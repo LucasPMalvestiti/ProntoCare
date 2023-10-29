@@ -12,8 +12,7 @@ body * {
     box-sizing: border-box;
 }
 
-/*index*/
-.main-login{
+.main-signin{
     width: 100vw;
     height: 100vh;
     background-color: black;
@@ -24,43 +23,7 @@ body * {
     text-align: center;
 }
 
-
-.left-login{
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    /*centralização das divs e texto da div a esquerda*/
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    flex-direction: column;
-    /*caso deseje implementar algo além da imagem q vai aqui,
-    e queira colocar este algo em alguma direção específica em
-    relação ao elemento principal usar flex-direction*/
-}
-
-.left-login > h1{
-    width: 36vw;
-    text-align: left;
-    color: #e33333;
-    margin:0;
-    font-size: 3vw;
-}
-
-.left-login  > h2{
-    width: 36vw;
-    text-align: left;
-    color: #1e1e1e;
-    margin:0;
-    font-size: 1.5vw;
-}
-
-.left-login-img{
-    /*torna a img responsiva*/
-    width: 30vw;
-}
-
-.right-login{
+.left-signin{
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -71,7 +34,7 @@ body * {
     background-color:#e33333;
 }
 
-.card-login{
+.card-signin{
     width: 60%;
     display: flex;
     /*centraliza os elementos da card de login*/
@@ -90,7 +53,6 @@ body * {
     width: 10vw;
 }
 
-/*design dos espaços para texto (label/input)*/
 .textfield{
     width: 100%;
     display: flex;
@@ -126,11 +88,10 @@ body * {
     color: rgb(102, 102, 102);
 }
 
-/*design do botão de login*/
-.btn-login{
+.btn-signin{
     /*margens e bordas do botão*/
-    width: 50%;
-    padding: 16px 0px;
+    width: 90%;
+    padding: 16px;
     margin: 15px;
     border: solid #e33333;
     border-radius: 8px;
@@ -147,68 +108,43 @@ body * {
     transition-duration: 0.3s;
 }
 
-/*mudar botão qnd mouse passar por cima*/
-.btn-login:hover{
+.btn-signin:hover{
     background-color: white;
     color: #e33333;
     border: solid #e33333;
 }
 
-/*tamanho da div das linhas de rodapé do card de login*/
-.login-card-footer{
-    width: 100%;
+.right-signin{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    /*centralização das divs e texto da div a esquerda*/
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    flex-direction: column;
+    /*caso deseje implementar algo além da imagem q vai aqui,
+    e queira colocar este algo em alguma direção específica em
+    relação ao elemento principal usar flex-direction*/
 }
 
-/*tamanho dos parágrafos dentro da card*/
-.login-card-footer > p{
-    margin: 2%;
-}
-
-/*botão da linha de rodapé do card de login*/
-.a-footer{
+.right-signin > h1{
+    width: 36vw;
+    text-align: left;
     color: #e33333;
-    border: none;
-    background-color: inherit;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
+    margin:0;
+    font-size: 3vw;
 }
 
-/*mudar linha de contrate-nos já quando o mouse passar por cima*/
-.a-footer:hover{
-    text-decoration: underline;
+.right-signin  > h2{
+    width: 36vw;
+    text-align: left;
+    color: #1e1e1e;
+    margin:0;
+    font-size: 1.5vw;
 }
 
-/*responsividade do card de login para telas menores que 950px*/
-@media only screen and (max-width:950px){
-    .card-login{
-        width: 85%;
-    }
+.right-signin-img{
+    /*torna a img responsiva*/
+    width: 30vw;
 }
-
-/*RESPONSIVIDADE PARA O CELULAR
-
-DO JEITO Q TA, ESTA FUNCIONANDO, MAS N SEI SE COM
-A IMG NO FUNDO VAI FUNFAR, ENT QLQR COISA DXA COMENTADO*/
-@media only screen and (max-width:600px){
-    .main-login{
-        flex-direction: column;
-    }
-    .left-login > h1{
-        display: none;
-    }
-    .left-login{
-        width: 100%;
-        height: auto;
-    }
-    .right-login{
-        width: 100%;
-        height: auto;
-    }
-    .card-login{
-        width: 90%;
-    }
-}
-
-/*--------------------SignIn page---------------------*/
-
