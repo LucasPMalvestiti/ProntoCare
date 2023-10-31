@@ -14,6 +14,7 @@
 body{
     /*Definição da cor do fundo*/
     background-color: #E3E3E3;
+    overflow: hidden;
 }
 
 /*Construção da sidebar FECHADA*/
@@ -153,6 +154,7 @@ body{
 .sidebar.active ul li a:hover{
     background-color: #e3333333;
     color: #e33333;
+    transition: all 0s ease;
 }
 
 /*Definições do ícone da sidebar fechada*/
@@ -171,6 +173,7 @@ body{
 .sidebar ul li a i:hover{
     background-color: #e3333333;
     color: #e33333;
+    transition: all 0s ease;
 }
 
 /*Definição da parte escrita dos itens da lista da sidebar*/
@@ -192,7 +195,8 @@ body{
     left: 60px;
     /*Tamanho*/
     min-height: 100vh;
-    width: calc(100% - 60px);
+    --main-width-close: calc(100% - 60px);
+    width: var(--main-width-close);
     /*Transição ao abrir Sidebar*/
     transition: all 0.7s ease;
 }
@@ -201,7 +205,8 @@ body{
 irá ser movido x pixels para a esquerda (responsividade)*/
 .sidebar.active ~ .main-content{
     left: 180px;
-    width: calc(100% - 180px);
+    --main-width-open: calc(100% - 180px);
+    width: var(--main-width-open);
 }
 
 .main-content nav{
@@ -250,3 +255,86 @@ irá ser movido x pixels para a esquerda (responsividade)*/
     color: #1e1e1e;
 }
 
+
+
+.data{
+    --data-height: calc(100vh - 110px);
+    height: var(--data-height);
+    display: flex;
+    flex-direction: column;
+}
+
+.data .top-data{
+    height: calc(var(--data-height) / 2);
+    display: flex;
+}
+
+.data .top-data .top-left-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%
+}
+
+.data .top-data .top-right-data{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data .top-data .top-left-data .data-list{
+    background-color: white;
+    padding: 20px;
+    width: 95%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1e1e1e;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.data .top-data .top-right-data .recent-patients{
+    background-color: white;
+    width: 95%;
+    height: 86%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px #00000056;
+}
+
+.top-right-data h3{
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    columns: #1e1e1e;
+}
+
+.top-right-data li{
+    position: relative;
+    top: 1.7rem;
+    left: 1.4rem;
+    list-style-type: none;
+    
+}
+
+hr{
+    width: 93%;
+    margin: 8px 0;
+}
+
+.bottom-data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--data-height) / 2);
+}
+
+.power-bi{
+    background-color: white;
+    width: 97%;
+    height: 86%;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px #00000056;
+}
