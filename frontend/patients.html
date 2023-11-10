@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css\patients.css">
+    <title>Meus Pacientes</title>
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <div class="logo-btn">
+            <img src="img/logoNoBG.png" alt="Logo" class="logo">
+            <i class='bx bx-menu bx-sm' id="btn"></i>
+        </div>
+
+        <div class="list">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-home bx-sm' id="btn"></i>
+                        <span class="nav-item">Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-group bx-sm'></i>
+                        <span class="nav-item">Pacientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar bx-sm'></i>
+                        <span class="nav-item">Agenda</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="main-content">
+        <nav>
+            <div class="profile">
+                <p>Nome do Médico</p>
+                <img src="img/images.jpeg" class="user-img">
+            </div>
+        </nav>
+        <div class="title">
+            <h1>Meus Pacientes</h1>
+        </div>
+        
+        <div class="data">
+            <div class="patient">
+                <div class="profile-div">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <div class="profile">
+                        <h3>Nome Paciente</h3>
+                        <h4>Idade Paciente</h4>
+                    </div>
+                </div>
+                <h4>X Consultas Agendadas</h4>
+            </div>
+            <button class="btn-add">Adicionar Paciente</button>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+  let btn = document.querySelector('#btn')
+  let sidebar = document.querySelector('.sidebar')
+
+  btn.onclick = function () {
+    sidebar.classList.toggle('active')
+  };
+</script>
+
+
+
+</html>
