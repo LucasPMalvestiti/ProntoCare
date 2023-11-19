@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProntoCare</title>
-    <!--Link com o arquivo de CSS-->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProntoCare</title>
+  <!--Link com o arquivo de CSS-->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body>  
   <!--Div principal (engloba todo o conteúdo)-->
   <div class="main-login">
     <!--Div da esquerda (onde está a logo)-->
@@ -20,18 +20,18 @@
     <!--Div da direita onde está o card de login)-->
     <div class="right-login">
       <!--Div para o Card de Login-->
-      <form class="card-login">
+      <form class="card-login" id="card-login">
         <!--Aqui fica a logo dentro do cardlogin-->
-          <img src="img/logoNoBG.png" alt="Logo" class="login-logo-img">
+        <img src="img/logoNoBG.png" alt="Logo" class="login-logo-img">
         <!--Campo de Texto do Usuário(label e input)-->
         <div class="textfield">
           <label for="user">Usuário</label>
-          <input type="text" name="user" placeholder="Usuário">
+          <input type="text" name="user" id="email" placeholder="Usuário">
         </div>
         <!--Campo de Texto da Senha(label e input)-->
         <div class="textfield">
           <label for="password">Senha</label>
-          <input type="password" name="password" placeholder="Senha">
+          <input type="password" name="password" id="senha" placeholder="Senha">
         </div>
         <!--Botão do Login-->
         <button class="btn-login">Login</button>
@@ -39,10 +39,38 @@
         <div class="login-card-footer">
           <p>Ainda não possui o ProntoCare+?</p>
           <!--Botão em forma de texto-->
-          <a href="SignIn.html"class="a-footer">Contrate-nos já!</a>
+          <a href="SignIn.html" class="a-footer">Contrate-nos já!</a>
         </div>
       </form>
     </div>
   </div>
+  <script>
+    document.getElementsById("card-login").addEventListener("submit", function(event){
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      const data = {
+        email: email,
+        senha: senha
+      };
+
+      fetch('http://localhost:8080/login',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(data)
+      })
+      .then(response => response.text())
+      .then(result => {
+        document.getElementById("mensagem").innerText = result;
+      })
+      .catch( error => {
+        console.error('Erro:', error);
+      });
+   });
+  </script>
 </body>
 </html>
