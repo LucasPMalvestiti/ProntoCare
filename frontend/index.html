@@ -7,7 +7,7 @@
   <!--Link com o arquivo de CSS-->
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>  
+<body>
   <!--Div principal (engloba todo o conteúdo)-->
   <div class="main-login">
     <!--Div da esquerda (onde está a logo)-->
@@ -20,21 +20,21 @@
     <!--Div da direita onde está o card de login)-->
     <div class="right-login">
       <!--Div para o Card de Login-->
-      <form class="card-login" id="card-login">
+      <form type="submit" class="card-login" id="card-login">
         <!--Aqui fica a logo dentro do cardlogin-->
         <img src="img/logoNoBG.png" alt="Logo" class="login-logo-img">
         <!--Campo de Texto do Usuário(label e input)-->
         <div class="textfield">
-          <label for="user">Usuário</label>
-          <input type="text" name="user" id="email" placeholder="Usuário">
+          <label for="email">Usuário</label>
+          <input type="email" name="email" id="email" placeholder="Usuário" autocomplete="off">
         </div>
         <!--Campo de Texto da Senha(label e input)-->
         <div class="textfield">
           <label for="password">Senha</label>
-          <input type="password" name="password" id="senha" placeholder="Senha">
+          <input type="password" name="password" id="password" placeholder="Senha" autocomplete="off">
         </div>
         <!--Botão do Login-->
-        <button class="btn-login">Login</button>
+        <button type="submit" class="btn-login" onclick="submitForm()">Login</button>
         <!--Div do rodapé do card de login-->
         <div class="login-card-footer">
           <p>Ainda não possui o ProntoCare+?</p>
@@ -45,32 +45,33 @@
     </div>
   </div>
   <script>
-    document.getElementsById("card-login").addEventListener("submit", function(event){
-      event.preventDefault();
-
-      const email = document.getElementById("email").value;
-      const senha = document.getElementById("senha").value;
-
+    
+    function submitForm()
+    {
+      const axios = require('axios');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      
+      
       const data = {
         email: email,
-        senha: senha
+        password: password
       };
 
-      fetch('http://localhost:8080/login',{
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body:JSON.stringify(data)
+      axios.post('http://localhost:8080/login', data)
+      .then(response => {
+        console.log('Sucesso', response.data);
+        if(response.data === 200){
+          window.location.href = 'main_page.html';
+        }else{
+          console.error('Erro no login', response.data);
+        }
       })
-      .then(response => response.text())
-      .then(result => {
-        document.getElementById("mensagem").innerText = result;
-      })
-      .catch( error => {
+      .catch(error =>{
         console.error('Erro:', error);
       });
-   });
+    }
   </script>
+
 </body>
 </html>

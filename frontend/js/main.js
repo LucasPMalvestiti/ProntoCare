@@ -1,16 +1,26 @@
-// Importa a biblioteca Axios
-const axios = require('axios');
+import axios from 'axios';
 
 // Define a URL que você deseja acessar
-const url = 'https://jsonplaceholder.typicode.com/posts/1';
+const url = 'http://localhost:8080/login';
+
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+const data = {
+  email: email,
+  password: password
+};
 
 // Faz uma requisição GET para a URL
-axios.get(url)
+axios.post(url, data)
   .then(response => {
-    // Sucesso: Imprime os dados da resposta
-    console.log(response.data.id);
-  })
-  .catch(error => {
-    // Erro: Imprime uma mensagem de erro
-    console.error('Houve um erro na requisição:', error);
-  });
+        console.log('Sucesso', response.data);
+        if(response.data === 200){
+          window.location.href = 'main_page.html';
+        }else{
+          console.error('Erro no login', response.data);
+        }
+      })
+      .catch(error =>{
+        console.error('Erro:', error);
+      });
