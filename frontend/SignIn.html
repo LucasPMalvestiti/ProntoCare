@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrate já</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/signin.js"></script>
     <link rel="stylesheet" href="css/signin-style.css">
 </head>
 <body>
@@ -12,26 +14,29 @@
         <!--div da esquerda aonde esta o cadastro-->
         <div class="left-signin">
             <!--form onde esta a parte de cadastro-->
-            <form class="card-signin">
+            <form class="card-signin" method="post">
                 <!--Campo de Texto do nome completo(label e input)-->
                 <div class="textfield">
                     <label for="name">Nome completo</label>
-                    <input type="text" name="name" placeholder="Nome completo">
+                    <input type="name" name="name" id="name" placeholder="Nome completo">
+                </div>
+                <!--Campo de Texto do CRM completo(label e input)-->
+                <div class="textfield">
+                    <label for="crm">CRM completo</label>
+                    <input type="crm" name="crm" id="crm" placeholder="CRM(Conselho Regional de Medicina)">
                 </div>
                 <!--Campo de Texto da email(label e input)-->
                 <div class="textfield">
                     <label for="email">Email</label>
-                    <input type="text" name="email" placeholder="Email">
+                    <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 <!--Campo de Texto da senha(label e input)-->
                 <div class="textfield">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" placeholder="Senha">
+                    <input type="password" name="password" id="password" placeholder="Senha">
                 </div>
                 <!--Botão do cadastrar-->
-                <a href="index.html" class="">
-                    <button class="btn-signin">Cadastrar</button>
-                </a>
+                <button type="submit" class="btn-signin" onclick="CriarNovoUsuario()">Cadastrar</button>
             </form>  
         </div>
         <!--div da direita aonde esta a foto tematica-->
