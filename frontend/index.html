@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ProntoCare</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="js/main.js"></script>
   <!--Link com o arquivo de CSS-->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -34,7 +36,7 @@
           <input type="password" name="password" id="password" placeholder="Senha" autocomplete="off">
         </div>
         <!--Botão do Login-->
-        <button type="submit" class="btn-login" onclick="submitForm()">Login</button>
+        <button type="submit" class="btn-login" onclick="EnviarLogin()">Login</button>
         <!--Div do rodapé do card de login-->
         <div class="login-card-footer">
           <p>Ainda não possui o ProntoCare+?</p>
@@ -44,34 +46,5 @@
       </form>
     </div>
   </div>
-  <script>
-    
-    function submitForm()
-    {
-      const axios = require('axios');
-      const email = document.getElementById('email');
-      const password = document.getElementById('password');
-      
-      
-      const data = {
-        email: email,
-        password: password
-      };
-
-      axios.post('http://localhost:8080/login', data)
-      .then(response => {
-        console.log('Sucesso', response.data);
-        if(response.data === 200){
-          window.location.href = 'main_page.html';
-        }else{
-          console.error('Erro no login', response.data);
-        }
-      })
-      .catch(error =>{
-        console.error('Erro:', error);
-      });
-    }
-  </script>
-
 </body>
 </html>
